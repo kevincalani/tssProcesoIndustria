@@ -1,15 +1,10 @@
-import { SafeAreaView, Text, View } from 'react-native'
-import {
-    StyleSheet,
-    TextInput,
-    Button,
-  } from "react-native";
+import { SafeAreaView, Text, View, StyleSheet,TextInput,Button } from 'react-native'
 
 
 export default function DistNormal() {
   return (
-    <SafeAreaView>
-        <View style={styles.loginPageContainer}>
+    <SafeAreaView style={styles.PageContainer}>
+        <View style={styles.PageContainer}>
       <Text style={styles.title}>Distribucion Normal</Text>
       <View style={styles.inputContainer}>
         <TextInput
@@ -43,7 +38,7 @@ export default function DistNormal() {
   
 }
 const styles = StyleSheet.create({
-    loginPageContainer: {
+    PageContainer: {
       flex: 1,
       backgroundColor: "#EAF2F8",
       alignItems: "center",
