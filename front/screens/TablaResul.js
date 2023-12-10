@@ -1,17 +1,11 @@
-import React from 'react'
-import { SafeAreaView, View, FlatList, Text, StyleSheet } from 'react-native'
+import React, {useState} from 'react'
+import { ScrollView, View, FlatList, Text, StyleSheet } from 'react-native'
 
+export default function TablaResul({ navigation, route }) {
+  const tableData = route?.params?.tableData || [];
 
-  const tableData = [
-    { id: 1, x1: 'x1 1', x2: 'x2 1', interseccion: "1" },
-    { id: 2, x1: 'x1 2', x2: 'x2 2', interseccion: "0" },
-    //  más datos 
-  ];
-
-
-export default function TablaResul() {
   return (
-    <SafeAreaView>
+    <ScrollView>
         <View style={styles.container}>
       <FlatList
         data={tableData}
@@ -36,7 +30,7 @@ export default function TablaResul() {
         )}
       />
     </View>
-    </SafeAreaView>
+    </ScrollView>
   )
 }
 const styles = StyleSheet.create({
@@ -60,6 +54,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     textAlign: 'center',
+    paddingRight: 30,
   },
   header: {
     flexDirection: 'row',
