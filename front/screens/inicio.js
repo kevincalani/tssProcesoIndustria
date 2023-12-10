@@ -1,7 +1,17 @@
 import React from 'react'
 import { SafeAreaView, View, Text, StyleSheet, Image, Button, ScrollView } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Inicio() {
+
+  const navigation = useNavigation();
+
+  const navegacionPantallas =  () => {
+    
+      navigation.navigate('Distribucion');
+    
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
@@ -19,7 +29,7 @@ export default function Inicio() {
       <Text style={styles.subtitle}>b) El número de veces que es necesario simular el experimento si se quiere que la probabilidad de interferencia estimada difiera de su valor verdadero en menos de 0.01, con un nivel de seguridad del 95%.</Text>
       <Text style={styles.subtitle}>Asuma que el programa es parametrizable por lo que pueden ingresar parámetros según otras distribuciones.</Text>
       <View style={styles.button}>
-      <Button title="Comenzar" color="#0F52BA" />
+      <Button title="Comenzar" color="#0F52BA" onPress={navegacionPantallas}/>
       </View>
     </View>
     </ScrollView>

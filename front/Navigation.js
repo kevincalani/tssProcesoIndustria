@@ -30,7 +30,9 @@ function TabGroup() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Inicio"component={Inicio}/>
-      <Tab.Screen name="Distribucion" component={TopTabsGroup} />
+      <Tab.Screen name="Distribucion" component={({ navigation, route }) => (
+          <TopTabsGroup navigation={navigation} route={route} />
+        )} />
       <Tab.Screen
         name="Resultados"
         component={({ navigation, route }) => (
