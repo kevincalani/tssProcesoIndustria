@@ -11,6 +11,7 @@ export default function DistNormal() {
   const [media2, setMedia2] = useState ("1.48");
   const [varianza2, setVarianza2] = useState ("0.0009");
   const [numDatos, setNumDatos] = useState('10');
+  const [distribucion, setDistribucion] = useState("Distribucion Normal")
   const navigation = useNavigation();
   
     //generador de variables con distribucion normal
@@ -48,7 +49,7 @@ export default function DistNormal() {
       console.log("Tabla actualizada:", newData);
   
       setTableData(newData);
-      navigation.navigate('Resultados', { tableData: newData });
+      navigation.navigate('Resultados', { tableData: newData, distribucion:distribucion });
     } catch (error) {
       console.error("Error al generar datos:", error);
     }

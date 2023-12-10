@@ -39,7 +39,9 @@ function TabGroup() {
           <TablaResul navigation={navigation} route={route} />
         )}
       />
-      <Tab.Screen name="Conclusiones" component={Conclusiones} />
+      <Tab.Screen name="Conclusiones" component={({ navigation, route }) => (
+          <Conclusiones navigation={navigation} route={route} />
+        )} />
     </Tab.Navigator>
   );
 }

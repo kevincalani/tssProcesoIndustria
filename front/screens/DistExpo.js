@@ -8,6 +8,7 @@ export default function DistExpo() {
 const [promedio1, setPromedio1] = useState ("0.5");
 const [promedio2, setPromedio2] = useState ("0.5");
 const [numDatos, setNumDatos] = useState('10');
+const [distribucion, setDistribucion] = useState("Distribucion Exponencial")
 const navigation = useNavigation();
 
   //generador de variables con distribucion exponencial
@@ -37,7 +38,7 @@ const navegacionPantallas = async () => {
     console.log("Tabla actualizada:", newData);
 
     setTableData(newData);
-    navigation.navigate('Resultados', { tableData: newData });
+    navigation.navigate('Resultados', { tableData: newData, distribucion: distribucion });
   } catch (error) {
     console.error("Error al generar datos:", error);
   }

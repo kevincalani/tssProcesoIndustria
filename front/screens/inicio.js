@@ -6,10 +6,8 @@ export default function Inicio() {
 
   const navigation = useNavigation();
 
-  const navegacionPantallas =  () => {
-    
-      navigation.navigate('Distribucion');
-    
+  const navegacionPantallas =  () => {  
+      navigation.navigate('Distribucion'); 
   };
 
   return (

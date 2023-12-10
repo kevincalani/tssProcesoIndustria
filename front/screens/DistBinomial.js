@@ -9,6 +9,7 @@ export default function DistBinomial() {
   const [probExito2, setProbExito2] = useState("0.5");
   const [numIntentos2, setNumIntentos2] = useState("10");
   const [numDatos, setNumDatos] = useState('10');
+  const [distribucion, setDistribucion] = useState("Distribucion Binomial")
   const navigation = useNavigation();
 
   // Generador de variables con distribución binomial
@@ -39,7 +40,7 @@ export default function DistBinomial() {
         console.log("Tabla actualizada:", newData);
   
         setTableData(newData);
-        navigation.navigate('Resultados', { tableData: newData });
+        navigation.navigate('Resultados', { tableData: newData, distribucion:distribucion });
       } catch (error) {
         console.error("Error al generar datos:", error);
       }
